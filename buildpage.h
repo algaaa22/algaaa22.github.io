@@ -1,0 +1,43 @@
+String webcode(float temp, float hum, float co, int co2, unsigned int* arr) {
+  String page = "<!DOCTYPE html><html><head>";
+  page +="<title>Пансион воспитанниц МО РФ</title><meta charset='utf-8'>";
+  page +="<meta http-equiv=\"refresh\" content=\"5\">";
+  page +="<style>";
+  page +="body {margin-top:50px; font-family:Arial;";
+  page +="font-size:22px; text-align:center}";
+  // page +=".btn {display:block; width:220px;";
+  // page += "margin:auto; padding:30px}";
+  // page +=".btn {font-size:30px; color:black;";
+  // page += "text-decoration:none}";
+  // page +=".on {background-color:SkyBlue}";
+  // page +=".off {background-color:LightSteelBlue}";
+  // page +=".zero {background-color:Thistle}";
+  page +="td {font-size:22px; margin-top:50px;";
+  page += "margin-bottom:5px}";
+  page +="p {font-size:22px; margin-top:50px;";
+  page += "margin-bottom:5px}";
+  page +="table { border: 1px solid grey;} td { border: 1px solid grey;} </style></head>";
+  page +="<body>";
+  page +="<h1>Мониторинг качества воздуха</h1>";
+  page +="<p>Температура "+String(temp) + "\u00B0C";
+  page += "</p>";
+  page +="<p>Влажность "+String(hum)+ "%";
+  page += "</p>";
+  page +="<p>Концентрация угарного газа "+String(co)+ " ppm";
+  page += "</p>";
+  page +="<p>Содержание двуокиси углерода "+String(co2)+ " ppm";
+  page += "</p>";
+  page +="<p>  </p>";
+  page += "<table align=center><tr><th colspan='3'>Загрязнённость воздуха частицами пыли, стандартное измерение</th></tr>";
+  page += "<tr><td align=center>PM 1.0: "+ String(arr[0])+ "</td><td>PM 2.5: " + String(arr[1]) + "</td><td>PM 10: " + String(arr[2])+ "</td></tr>";
+  page += "<tr><th colspan='3'>Загрязнённость воздуха частицами пыли с учётом параметров среды</th></tr>";
+  page += "<tr><td align=center>PM 1.0: "+ String(arr[3])+ "</td><td>PM 2.5: " + String(arr[4]) + "</td><td>PM 10: " + String(arr[5])+ "</td></tr>";
+  page += "<tr><th colspan='3'>Количество частиц разных размеров в 0,1 литра воздуха</th></tr>";
+  page += "<tr><td align=left>P > 0.3 m/0.1L:  "+ String(arr[6])+ "</td><td align=left>P > 0.5 \u00B5m/0.1L: " + String(arr[7]) + "</td><td align=left>P > 1.0 \u00B5m/0.1L: " + String(arr[8])+ "</td></tr>";
+  page += "<tr><td align=left>P > 2.5 \u00B5m/0.1L: "+ String(arr[9])+ "</td><td align=left>P > 5.0 \u00B5m/0.1L: " + String(arr[10]) + "</td><td align=left>P > 10 \u00B5m/0.1L: " + String(arr[11])+ "</td></tr></table>";
+  
+  //page +=" now<a href='/zeroUrl'";
+  //page +="class='btn zero'>Press to zero counter</a></p>";
+  page +="</body></html>";
+  return page;
+  }
